@@ -15,7 +15,7 @@ services:
   proxysql:
     image: proxysql/proxysql:2.0.12
     restart: always
-    container_name: proxysql
+    container_name: proxysql-testing
     volumes: 
     - ./proxysql.cnf:/etc/proxysql.cnf
     - ./proxysql:/var/lib/proxysql
