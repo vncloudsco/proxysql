@@ -32,12 +32,17 @@ mysql_variables=
     monitor_password="monitor"
 }
 
+mysql_replication_hostgroups =
+(
+    { writer_hostgroup=1 , reader_hostgroup=2 , comment="host groups" }
+)
+
 mysql_servers =
 (
     {   
         hostgroup_id=1, 
-        hostname="10.0.1.25", 
-        port=28253, 
+        hostname="mysql-master", 
+        port=3306, 
         weight=1, 
         max_connections=100, 
         max_replication_lag=10, 
@@ -47,6 +52,16 @@ mysql_servers =
     {   
         hostgroup_id=2, 
         hostname="10.0.1.16", 
+        port=20361, 
+        weight=1, 
+        max_connections=100, 
+        max_replication_lag=10, 
+        use_ssl=1,
+        comment="Server 2"
+    },
+    {   
+        hostgroup_id=2, 
+        hostname="10.0.1.25", 
         port=20361, 
         weight=1, 
         max_connections=100, 
@@ -63,14 +78,6 @@ mysql_users =
         username="root",
         password="0003b166e5",
         default_hostgroup=1,
-        active=1,
-        max_connections=100,
-        default_schema="tinydb"
-    },
-    {
-        username="59308f9ac60b1dbd",
-        password="95bd593661806b76",
-        default_hostgroup=2,
         active=1,
         max_connections=100,
         default_schema="tinydb"
