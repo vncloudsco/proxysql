@@ -52,7 +52,7 @@ mysql_servers =
     {   
         hostgroup_id=2, 
         hostname="10.0.1.16", 
-        port=20361, 
+        port=38516, 
         weight=1, 
         max_connections=100, 
         max_replication_lag=10, 
@@ -62,7 +62,7 @@ mysql_servers =
     {   
         hostgroup_id=2, 
         hostname="10.0.1.25", 
-        port=20361, 
+        port=26955, 
         weight=1, 
         max_connections=100, 
         max_replication_lag=10, 
